@@ -6,21 +6,25 @@
 </head>
 <body>
   <!-- body -->
-  <div id="example">
-    <p>Original message: {{ message }}</p>
-    <p>Computed message: {{ reverseMessage }}</p>
+  <div id="demo">
+    {{ fullName }}
   </div>
   <!-- body -->
   <script src="https://unpkg.com/vue@2.2.6"></script>
   <script type="text/javascript">
   let vm = new Vue({
-    el: '#example',
+    el: '#demo',
     data: {
-      message: 'Hello'
+      firstName: 'Foo',
+      lastName: 'Bar',
+      fullName: 'Foo Bar'
     },
-    computed: {
-      reverseMessage: function() {
-        return this.message.split('').reverse().join('')
+    watch: {
+      firstName: function(val) {
+        this.fullName = val + ' ' + this.lastName
+      },
+      lastName: function(val) {
+        this.fullName = this.firstName + ' ' + val
       }
     }
   })
