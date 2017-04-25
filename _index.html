@@ -6,25 +6,21 @@
 </head>
 <body>
   <!-- body -->
-  <div id="app">
-    <span>Message: {{message}}</span><br>
-    <span>Message: {{message2}}</span><br>
-    <a v-bind:href="url">link</a>
-    <a v-on:click="doSomething">link</a>
+  <div id="example">
+    <p>Original message: {{ message }}</p>
+    <p>Computed message: {{ reverseMessage }}</p>
   </div>
   <!-- body -->
   <script src="https://unpkg.com/vue@2.2.6"></script>
   <script type="text/javascript">
   let vm = new Vue({
-    el: app,
+    el: '#example',
     data: {
-      message: 'Test',
-      message2: 'hoge',
-      url: 'http://google.com'
+      message: 'Hello'
     },
-    methods: {
-      doSomething: function() {
-        this.message = 'まじか'
+    computed: {
+      reverseMessage: function() {
+        return this.message.split('').reverse().join('')
       }
     }
   })
