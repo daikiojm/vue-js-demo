@@ -21,7 +21,8 @@
   <div id="app-4">
     <ol>
       <li v-for="todo in todos">
-        {{ todo.text }}
+        <!-- {{ todo.text }} -->
+        {{ todo.age }}
       </li>
     </ol>
   </div>
@@ -51,10 +52,18 @@
     el: '#app-4',
     data: {
       todos: [
-        { text: 'test text1'},
-        { text: 'test text2'},
-        { text: 'test text3'},
-        { text: 'test text4'}
+        {
+          text: 'test text1',
+          age: 6
+        },
+        {
+          text: 'test text2',
+          age: 8
+        },
+        {
+          text: 'full chance',
+          age: 59
+        }
       ]
     }
   })
