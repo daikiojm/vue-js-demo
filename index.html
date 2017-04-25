@@ -2,32 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 <body>
-  <div id="mycounter">
-    <div v-text="count"></div>
-    <!-- ディレクティブ -->
-    <button v-on="click: countUp">Up</button>
+  <!-- body -->
+  <div id="app">
+    {{message}}
   </div>
-
-
-<script src="https://unpkg.com/vue"></script>
+  <!-- body -->
+  <script src="https://unpkg.com/vue@2.2.6"></script>
   <script type="text/javascript">
-  var vm = new Vue({
-    el: '#mycounter',
+  let app = new Vue({
+    el: '#app',
     data: {
-      count: 0
-    },
-    methods: {
-      countUp: function() {
-        this.count++;
-      }
+      message: 'Hoge'
     }
-  });
-
+  })
   </script>
 </body>
 </html>
