@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <!-- body -->
+  <div id="app">
+    <span>Message: {{message}}</span><br>
+    <span>Message: {{message2}}</span><br>
+    <a v-bind:href="url">link</a>
+    <a v-on:click="doSomething">link</a>
+  </div>
+  <!-- body -->
+  <script src="https://unpkg.com/vue@2.2.6"></script>
+  <script type="text/javascript">
+  let vm = new Vue({
+    el: app,
+    data: {
+      message: 'Test',
+      message2: 'hoge',
+      url: 'http://google.com'
+    },
+    methods: {
+      doSomething: function() {
+        this.message = 'まじか'
+      }
+    }
+  })
+  </script>
+</body>
+</html>
