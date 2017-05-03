@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <!-- body -->
+  <div id="sample">
+    <my-component></my-component>
+    <my-component-2></my-component-2>
+    <my-component-3></my-component-3>
+  </div>
+
+  <!-- body -->
+  <script src="https://unpkg.com/vue@2.2.6"></script>
+  <script type="text/javascript">
+  // register component
+  Vue.component('my-component', {
+    template: '<div>This is custom conponent</div>'
+  })
+  // register component 2
+  Vue.component('my-component-2', {
+    template:
+      '<div><div>This is custom conponent</div><h2>This is list items</h2>'
+  })
+  // register component 3
+  Vue.component('my-component-3', {
+    template:
+      `<h1>Hoge</h1>
+        <h2>hogehoge</h2>
+        <h2>hogehoge</h2>
+      <h4>moge</h4>`
+  })
+  // To materialize
+  let vm = new Vue({
+    el: '#sample'
+  })
+  </script>
+</body>
+</html>
